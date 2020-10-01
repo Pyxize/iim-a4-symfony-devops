@@ -17,3 +17,8 @@ jobs:
         uses: docker://oskarstark/phpstan-ga
         with:
           args: analyse src/ --level=5
+      - name: Deploy heroku
+        uses: akhileshns/heroku-deploy@v3.5.6 # This is the action
+        with:
+          heroku_api_key: ${{secrets.HEROKU_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP}} #Must be unique in Heroku
