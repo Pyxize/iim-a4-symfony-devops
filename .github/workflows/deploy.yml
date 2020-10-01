@@ -7,9 +7,9 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      # git clone
+      - name: git clone
       - uses: actions/checkout@v2
-      # linter
+      - name: linter
       - uses: michaelw90/PHP-lint@master
       - name: Security checker
       - uses: symfonycorp/security-checker-action@v2
