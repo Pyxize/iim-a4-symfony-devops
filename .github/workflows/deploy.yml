@@ -8,11 +8,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: git clone
-      - uses: actions/checkout@v2
+        uses: actions/checkout@v2
       - name: linter
-      - uses: michaelw90/PHP-lint@master
+        uses: michaelw90/PHP-lint@master
       - name: Security checker
-      - uses: symfonycorp/security-checker-action@v2
+        uses: symfonycorp/security-checker-action@v2
       - name: PHPstan
         uses: docker://oskarstark/phpstan-ga
         with:
