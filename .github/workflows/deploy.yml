@@ -11,5 +11,9 @@ jobs:
       - uses: actions/checkout@v2
       # linter
       - uses: michaelw90/PHP-lint@master
-      # security check
+      - name: Security checker
       - uses: symfonycorp/security-checker-action@v2
+      - name: PHPstan
+        uses: docker://oskarstark/phpstan-ga
+        with:
+          args: analyse src/ --level=5
